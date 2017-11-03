@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatSliderModule,
+          MatToolbarModule, MatCardModule, MatSlideToggleModule, MatFormFieldModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+          
+import 'hammerjs';
+
 import { GeolocationService } from './geolocation.service';
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatSliderModule,
-          MatToolbarModule, MatCardModule, MatSlideToggleModule } from '@angular/material';
-import 'hammerjs';
 import { ListComponent } from './list/list.component';
 import { CoffeeComponent } from './coffee/coffee.component';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: ListComponent },
@@ -26,6 +29,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes),
+    FormsModule, HttpModule,
     BrowserModule, BrowserAnimationsModule, MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatSliderModule,
     MatToolbarModule, MatCardModule, MatSlideToggleModule
   ],
